@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predictive Analysis </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="clump_thickness" placeholder="clump_thickness" required="required" />
+		<input type="text" name="uniform_cell_size" placeholder="uniform_cell_size" required="required" />
+    <input type="text" name="id" placeholder="uniform_cell_shape" required="required" />
+    <input type="text" name="marginal_adhesion" placeholder="marginal_adhesion" required="required" />
+    <input type="text" name="single_epithelial_size" placeholder="single_epithelial_size" required="required" />
+    <input type="text" name="bare_nuclei" placeholder="bare_nuclei" required="required" />
+    <input type="text" name="blend_chromatin" placeholder="blend_chromatin" required="required" />
+    <input type="text" name="normal_nuclei" placeholder="normal_nuclei" required="required" />
+    <input type="text" name="mitoses" placeholder="mitoses" required="required" />
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
